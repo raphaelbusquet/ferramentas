@@ -13,24 +13,112 @@ body {
     align-items: center;
 }
 
+body > .background {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(imagens/imagem.png) no-repeat center center fixed;
+    position: relative;
+    z-index: 1;
+}
+
+
+body > .background::after {
+    content: '';
+    background-color: #00000082;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
 .container_global {
     width: 380px;
     height: 400px;
-    border: 1px solid #000;
-    padding: 3px;    
+    padding: 10px;    
     display: grid;
-    grid-template-rows: 50px 30px 320px;
+    grid-template-rows: 50px 50px 50px 210px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.648);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 30%), 0 8px 16px rgb(0 0 0 / 30%);
 }
 
-.buttons{
+.buttons_container {
     display: grid;
-    grid-template-columns: 70px 70px 70px 70px 70px;
-    grid-template-rows: 50px 50px 50px 50px 50px;
-    grid-gap: 5px;   
+    grid-template-columns: 45px 70px 70px 70px 70px;
+    grid-template-rows: 40px 40px 40px 40px 40px;
+    grid-gap: 2px;
+    grid-row-start: 4; 
+    margin: 0 auto;
 }
 
-.btn_brown{
-    background: radial-gradient(circle at 50% 5%, hsl(23, 14%, 58%), #4b3d33, #4b3d33);   
+.btn_brown, .btn_equal, .btn_black { 
+   color: #fff;
+   border-radius: 10px;
 }
 
-/* Jhonatan e Raphael */ 
+.btn_brown:hover {
+    background: radial-gradient(circle at 50% 5%, hsla(23, 5%, 65%, 0.461), #4b3d33, #4b3d33);
+}
+
+
+
+.btn_brown {
+    /* background: radial-gradient(circle at 50% 5%, hsl(23, 14%, 58%), #4b3d33, #4b3d33);    */
+    background: radial-gradient(closest-side at 50% 30%,#63564d, #34271d);
+    box-shadow: 3px 3px 3px 3px #1e1c1b65;
+}
+
+.btn_black {
+    background: radial-gradient(closest-side at 50% 30%,#000000ad, #181818a4);
+    box-shadow: 3px 3px 3px 3px #1e1c1b65;
+}
+
+.btn_black:hover {
+    background: radial-gradient(closest-side at 50% 30%,  #000, #181818);
+}
+
+.btn_equal {
+    background: radial-gradient(closest-side at 50% 30%,#ff8000d3, #f77103d9);
+    grid-row: span 2;
+}
+
+.btn_equal:hover {
+    background: radial-gradient(closest-side at 50% 30%, #ff8000ee, #f55e00a1);
+}
+
+.previous_digit {
+    color: #fff;
+    font-size: 15px;
+    grid-row-start: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.current_digit {
+    color: #fff;
+    font-size: 30px;
+    grid-row-start: 2;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.input {
+    grid-row-start: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.input > input {
+    width: 80%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #000000a3; 
+}
